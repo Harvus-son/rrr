@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="app">
+        <header>
+            <div class="logo">AI</div>
+            <div>
+                <h1>Voice Assistant</h1>
+                <p>GPT + Inworld TTS</p>
+            </div>
+            <a class="chatgpt-link" href="https://chatgpt.com/c/6a7c35f8-4d80-83eb-af88-e824e20e55ca" target="_blank" rel="noopener noreferrer">💬 ChatGPT</a>
+            <span id="status" class="status">Готов</span>
+        </header>
+
+        <section id="chat" class="chat">
+            <div class="message ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble">
+                    Привет! Я голосовой AI-ассистент. Напиши сообщение или нажми 🎤 и говори.
+                </div>
+            </div>
+        </section>
+
+        <section class="controls">
+            <textarea id="input" placeholder="Напишите сообщение..." rows="1"></textarea>
+            <button id="send" class="send">➤</button>
+            <button id="mic" class="mic" title="Говорить">🎤</button>
+        </section>
+
+        <p id="hint">Нажмите 🎤, разрешите доступ к микрофону и говорите.</p>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
