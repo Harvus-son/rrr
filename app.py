@@ -37,7 +37,7 @@ def chat():
         text = response.output_text
         return jsonify({"text": text})
     except Exception as e:
-        return jsonify({"error": f"Ошибка OpenAI: {e}"}), 500
+        return jsonify({"error": "Не удалось обработать запрос к AI-сервису."}), 502
 
 @app.post("/api/tts")
 def tts():
@@ -80,10 +80,10 @@ def tts():
         })
     except requests.HTTPError:
         return jsonify({
-            "error": f"Inworld HTTP {r.status_code}: {r.text[:500]}"
+            "error": "Сервис озвучивания временно недоступен."
         }), 502
     except Exception as e:
-        return jsonify({"error": f"Ошибка Inworld: {e}"}), 500
+        return jsonify({"error": "Не удалось создать аудио."}), 502
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
